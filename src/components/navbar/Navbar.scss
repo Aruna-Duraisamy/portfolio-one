@@ -4,6 +4,109 @@
     width: 100%;
     height: 70px;
     background-color: $mainColor;
+    color: $mainColorText;
     position: fixed;
     z-index: 2;
+
+    transition: all 1s ease;
+
+    .wrapper {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        min-width: auto;
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            color:inherit;
+            margin-right:40px;
+            
+            &:hover {
+                color:$mainColorTextHover;
+            } 
+        }
+        .socialIconsContainer{
+            display: inherit;
+            align-items: inherit;
+            margin-right: 20px;
+
+            .icon{
+                font-size: 25px;
+
+            }
+            .icon-with-text{
+                font-size: 16px;
+            }
+            span {
+                font-size: 15px;
+                margin-left: 5px;
+                font-weight: 100;
+            }
+            
+            &:hover {
+                color:$mainColorTextHover; 
+                .icon{
+                    cursor: pointer;
+                }
+                
+            }
+
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.6s ease-in;
+        .icon{
+            font-size: 35px;
+        }
+        #close{
+            display: none;
+        } 
+        &:hover {
+            color: $mainColorTextHover;
+        }  
+    }
+    &.active {
+        background-color: $compColor;
+        color: $compColorText;
+        .right {
+            #close {
+                display: flex;
+            }
+            #menu{
+                display: none;
+            }
+            &:hover {
+                color: $compColorTextHover;
+            } 
+        } 
+        .left {
+            .logo {
+                &:hover {
+                    color:$compColorTextHover; 
+                }
+            }
+            .socialIconsContainer {
+               
+                &:hover {
+                    color:$compColorTextHover; 
+                    .icon{
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+        }  
+        
+    }
 }
